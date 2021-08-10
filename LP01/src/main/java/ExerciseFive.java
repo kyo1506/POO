@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 public class ExerciseFive {
     public static void main(String[] args) {

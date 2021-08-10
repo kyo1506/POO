@@ -12,6 +12,6 @@ public class ExerciseOne {
         produto = input.nextLine();
         System.out.print("Digite o valor do produto R$: ");
         valorProduto = input.nextFloat();
-        System.out.print("O produto " + produto + " com o desconto de 9% é obtido o valor final R$: " + valorProduto * descontoProduto);
+        System.out.print("O produto " + produto + " com o desconto de 9% é obtido o valor final R$: " + (valorProduto - (valorProduto * descontoProduto)));
     }
 }
