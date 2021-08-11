@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ccb38f6-78b8-45df-bc65-d2246f83c19c" name="Changes" comment="Lista de exercícios - LP-02">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseFive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseFour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseThree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,16 +96,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExerciseThree">
-    <configuration name="ExerciseFive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ExerciseFive" />
-      <module name="LP02.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExerciseFour" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ExerciseFour" />
+  <component name="RunManager" selected="Application.ExerciseOne">
+    <configuration name="ExerciseOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExerciseOne" />
       <module name="LP02.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -117,6 +106,13 @@
     </configuration>
     <configuration name="ExerciseThree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ExerciseThree" />
+      <module name="LP02.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExerciseTwo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExerciseTwo" />
       <module name="LP02.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExerciseOne" />
+        <item itemvalue="Application.ExerciseThree" />
+        <item itemvalue="Application.ExerciseTwo" />
         <item itemvalue="Gradle.LP02 [build]" />
         <item itemvalue="Gradle.LP02 [clean]" />
-        <item itemvalue="Application.ExerciseFive" />
-        <item itemvalue="Application.ExerciseFour" />
-        <item itemvalue="Application.ExerciseThree" />
       </list>
     </recent_temporary>
   </component>
@@ -238,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628637206866</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Lista de exercícios - LP-02">
+      <created>1628642420944</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1628642420944</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
