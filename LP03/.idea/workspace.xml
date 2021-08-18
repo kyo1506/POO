@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ccb38f6-78b8-45df-bc65-d2246f83c19c" name="Changes" comment="Lista de exercícios - LP-02">
-      <change afterPath="$PROJECT_DIR$/docs/LP-2.PDF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LP02/docs/LP-2.PDF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseFive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseFour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseOne.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseThree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LP02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LP02/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,16 +34,16 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LP02" type="f1a62948:ProjectNode" />
+                <item name="LP03" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LP02" type="f1a62948:ProjectNode" />
+                <item name="LP03" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LP02" type="f1a62948:ProjectNode" />
+                <item name="LP03" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
@@ -80,7 +85,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -91,50 +95,36 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExerciseOne">
+  <component name="RunManager" selected="Application.ExerciseFour">
+    <configuration name="ExerciseFive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExerciseFive" />
+      <module name="LP03.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExerciseFour" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExerciseFour" />
+      <module name="LP03.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExerciseOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ExerciseOne" />
-      <module name="LP02.main" />
+      <module name="LP03.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ExerciseThree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ExerciseThree" />
-      <module name="LP02.main" />
+      <module name="LP03.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExerciseTwo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ExerciseTwo" />
-      <module name="LP02.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LP02 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="LP02 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LP03 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -155,13 +145,26 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="LP03" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="LP03" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExerciseFour" />
+        <item itemvalue="Application.ExerciseFive" />
+        <item itemvalue="Gradle.LP03 [clean]" />
         <item itemvalue="Application.ExerciseOne" />
         <item itemvalue="Application.ExerciseThree" />
-        <item itemvalue="Application.ExerciseTwo" />
-        <item itemvalue="Gradle.LP02 [build]" />
-        <item itemvalue="Gradle.LP02 [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -195,35 +198,35 @@
       <option name="project" value="LOCAL" />
       <updated>1628039140202</updated>
     </task>
-    <task id="LOCAL-00004" summary="Lista de exercícios - LP02">
+    <task id="LOCAL-00004" summary="Lista de exercícios - LP03">
       <created>1628088278858</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1628088278858</updated>
     </task>
-    <task id="LOCAL-00005" summary="Lista de exercícios - LP-02">
+    <task id="LOCAL-00005" summary="Lista de exercícios - LP-03">
       <created>1628637192270</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1628637192270</updated>
     </task>
-    <task id="LOCAL-00006" summary="Lista de exercícios - LP-02">
+    <task id="LOCAL-00006" summary="Lista de exercícios - LP-03">
       <created>1628637206866</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1628637206866</updated>
     </task>
-    <task id="LOCAL-00007" summary="Lista de exercícios - LP-02">
+    <task id="LOCAL-00007" summary="Lista de exercícios - LP-03">
       <created>1628642420944</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1628642420944</updated>
     </task>
-    <task id="LOCAL-00008" summary="Lista de exercícios - LP-02">
+    <task id="LOCAL-00008" summary="Lista de exercícios - LP-03">
       <created>1628642979106</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
@@ -251,8 +254,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
-    <MESSAGE value="Lista de exercícios - LP02" />
-    <MESSAGE value="Lista de exercícios - LP-02" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lista de exercícios - LP-02" />
+    <MESSAGE value="Lista de exercícios - LP03" />
+    <MESSAGE value="Lista de exercícios - LP-03" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lista de exercícios - LP-03" />
   </component>
 </project>
