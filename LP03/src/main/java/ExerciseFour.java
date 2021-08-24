@@ -27,7 +27,7 @@ public class ExerciseFour {
                 notes.add(parseDouble(JOptionPane.showInputDialog(null, "Digite a nota de P " + (i+1) + " :", "Question", JOptionPane.QUESTION_MESSAGE)) * iterator.next());
             }
 
-            JOptionPane.showMessageDialog(null, "O aluno " + name + ", possui a nota " + String.format("%.2f", notes.stream().mapToDouble(Double::doubleValue).sum() / 3) + " de média final." , "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "O aluno " + name + ", possui a nota " + String.format("%.2f", notes.stream().mapToDouble(Double::doubleValue).sum()) + " de média final." , "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         catch (Exception ex)
         {
