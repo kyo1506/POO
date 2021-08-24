@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ccb38f6-78b8-45df-bc65-d2246f83c19c" name="Changes" comment="Lista de exercícios - LP-02">
-      <change afterPath="$PROJECT_DIR$/../LP02/docs/LP-2.PDF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseFive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseFour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseThree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ExerciseTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LP02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LP02/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ExerciseFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ExerciseFour.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,19 +146,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="LP03" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="LP03" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ExerciseFour" />
@@ -257,5 +245,16 @@
     <MESSAGE value="Lista de exercícios - LP03" />
     <MESSAGE value="Lista de exercícios - LP-03" />
     <option name="LAST_COMMIT_MESSAGE" value="Lista de exercícios - LP-03" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ExerciseFour.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

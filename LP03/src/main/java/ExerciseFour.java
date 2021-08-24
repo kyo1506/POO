@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,9 +16,15 @@ public class ExerciseFour {
         {
             String name = JOptionPane.showInputDialog(null, "Digite o nome do aluno:", "Question", JOptionPane.QUESTION_MESSAGE);
             List<Double> notes = new ArrayList<>();
+            List<Double> weights = new ArrayList<>();
+            weights.add(0.35);
+            weights.add(0.5);
+            weights.add(0.15);
 
-            for(int i = 1; i < 4; i++) {
-                notes.add(parseDouble(JOptionPane.showInputDialog(null, "Digite a nota de P " + i + " :", "Question", JOptionPane.QUESTION_MESSAGE)));
+            Iterator<Double> iterator = weights.iterator();
+
+            for(int i = 0; i < 3; i++) {
+                notes.add(parseDouble(JOptionPane.showInputDialog(null, "Digite a nota de P " + (i+1) + " :", "Question", JOptionPane.QUESTION_MESSAGE)) * iterator.next());
             }
 
             JOptionPane.showMessageDialog(null, "O aluno " + name + ", possui a nota " + String.format("%.2f", notes.stream().mapToDouble(Double::doubleValue).sum() / 3) + " de média final." , "Information", JOptionPane.INFORMATION_MESSAGE);
