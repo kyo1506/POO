@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ccb38f6-78b8-45df-bc65-d2246f83c19c" name="Changes" comment="Correção exercício 04" />
+    <list default="true" id="7ccb38f6-78b8-45df-bc65-d2246f83c19c" name="Changes" comment="Correção exercício 04 - Tirado o dividido por três" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629846940103</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Correção exercício 04 - Tirado o dividido por três">
+      <created>1629848289224</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1629848289224</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -243,6 +250,7 @@
     <MESSAGE value="Lista de exercícios - LP03" />
     <MESSAGE value="Lista de exercícios - LP-03" />
     <MESSAGE value="Correção exercício 04" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correção exercício 04" />
+    <MESSAGE value="Correção exercício 04 - Tirado o dividido por três" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção exercício 04 - Tirado o dividido por três" />
   </component>
 </project>
