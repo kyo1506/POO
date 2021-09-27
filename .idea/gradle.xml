@@ -69,6 +69,17 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/LP08" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Program Files/Gradle" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/LP08" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
