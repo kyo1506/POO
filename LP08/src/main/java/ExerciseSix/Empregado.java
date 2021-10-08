@@ -12,4 +12,5 @@ public class Empregado extends Pessoa{
     public void setSalario(double salario) {
         this.salario = salario;
     }
+    public double obterLucros(){return salario;}
 }

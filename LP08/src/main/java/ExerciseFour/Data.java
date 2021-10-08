@@ -10,14 +10,14 @@ public class Data {
     public Data(int dia, int mes, int ano) {
         try {
             if (dia > 1 && dia <= 31)
-                this.dia = 1;
-            else
                 this.dia = dia;
+            else
+                this.dia = 1;
 
             if (mes > 1 && mes <= 12)
-                this.mes = 1;
-            else
                 this.mes = mes;
+            else
+                this.mes = 1;
 
             this.ano = ano;
         }catch (Exception ex){

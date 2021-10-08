@@ -39,7 +39,7 @@ public class Calculadora {
         this.message = message;
     }
 
-    public String calculaValor(){
+    public void calculaValor(){
         switch (operacao) {
             case "+":
                 message = "A soma dos valores " + valorUm + " e " + valorDois + " é igual a " + (valorUm + valorDois);
@@ -60,6 +60,9 @@ public class Calculadora {
             default:
                 break;
         }
+    }
+
+    public String verResultado(){
         return message;
     }
 }
