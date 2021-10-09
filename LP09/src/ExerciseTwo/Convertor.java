@@ -1,8 +1,6 @@
 package ExerciseTwo;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Convertor extends JFrame{
     private JPanel mainPanel;
@@ -38,7 +36,7 @@ public class Convertor extends JFrame{
         this.pack();
     }
 
-    public static void main(String[] args) {
+    public static void run() {
         JFrame frame = new Convertor("Convertor de dinheiro");
         frame.setVisible(true);
     }
