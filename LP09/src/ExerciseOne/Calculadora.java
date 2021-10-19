@@ -16,6 +16,10 @@ public class Calculadora extends JFrame{
     private JButton btnEquals;
     private JButton btnDot;
     private JButton btnZero;
+    private JButton btnMultiply;
+    private JButton btnSum;
+    private JButton btnSubtract;
+    private JButton btnSplit;
     private JPanel bottomPanel;
     private JPanel mainPanel;
 
