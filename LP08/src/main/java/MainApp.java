@@ -1,8 +1,8 @@
 import ExerciseFive.Cocker;
 import ExerciseFour.Data;
-import ExerciseOne.Faturar;
-import ExerciseThree.Calculadora;
-import ExerciseTwo.Empregado;
+import view.ExerciseOne.Faturar;
+import view.ExerciseThree.Calculadora;
+import view.ExerciseTwo.Empregado;
 
 import javax.swing.*;
 import java.util.ArrayList;

@@ -1,13 +1,13 @@
-import ExerciseOne.CalcularValores;
-import ExerciseThree.CalcularICMS;
-import ExerciseTwo.AppendText;
+import view.ExerciseOne.CalcularValores;
+import view.ExerciseThree.CalcularICMS;
+import view.ExerciseTwo.AppendText;
 
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
         ImageIcon icon = new ImageIcon("../src/images/relogio.png");
-        String options[] = {"Exercício Um", "Exercício Dois", "Exercício Três"};
+        String[] options = {"Exercício Um", "Exercício Dois", "Exercício Três"};
         int i = JOptionPane.showOptionDialog(null,
                 "Escolha uma opção de exercício",
                 "Lista 10",
@@ -17,18 +17,12 @@ public class Main {
                 options,
                 options[0]);
 
-        switch (i){
-            case 0:
-                CalcularValores.run();
-                break;
-            case 1:
-                AppendText.run();
-                break;
-            case 2:
-                CalcularICMS.run();
-                break;
-            default:
-                break;
+        switch (i) {
+            case 0 -> CalcularValores.run();
+            case 1 -> AppendText.run();
+            case 2 -> CalcularICMS.run();
+            default -> {
+            }
         }
     }
 }
