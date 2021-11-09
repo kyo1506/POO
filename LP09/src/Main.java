@@ -1,13 +1,13 @@
-import ExerciseOne.Calculadora;
-import ExerciseThree.CalculadoraIMC;
-import ExerciseTwo.Convertor;
+import view.ExerciseOne.Calculadora;
+import view.ExerciseThree.CalculadoraIMC;
+import view.ExerciseTwo.Convertor;
 
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
         ImageIcon icon = new ImageIcon("../src/images/relogio.png");
-        String options[] = {"Exercício Um", "Exercício Dois", "Exercício Três"};
+        String[] options = {"Exercício Um", "Exercício Dois", "Exercício Três"};
         int i = JOptionPane.showOptionDialog(null,
                 "Escolha uma opção de exercício",
                 "Lista 9",
