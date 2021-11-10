@@ -5,7 +5,6 @@ import model.bean.Produto;
 
 import javax.persistence.EntityManager;
 import java.util.List;
-import java.util.Optional;
 
 public class ProdutoDAO {
     public List<Produto> listAll()  {
@@ -18,21 +17,14 @@ public class ProdutoDAO {
             entityManager.close();
         }
     }
-    public Optional<Produto> getById(Long id) {
+    public Produto getById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
-            return (Optional<Produto>) entityManager.createNativeQuery("SELECT * FROM produto WHERE id = ?").setParameter(1, id).getSingleResult();
+            return (Produto) entityManager.createNativeQuery("SELECT * FROM produto WHERE id = ?").setParameter(1, id).getSingleResult();
         }catch (Exception ex){
             return null;
         }finally {
             entityManager.close();
-        }
-    }
-    public Optional<Produto> getById(Long id, EntityManager entityManager) {
-        try {
-            return (Optional<Produto>) entityManager.createNativeQuery("SELECT * FROM produto WHERE id = ?").setParameter(1, id).getSingleResult();
-        }catch (Exception ex){
-            return null;
         }
     }
     public void insertProduto (Produto produto) {

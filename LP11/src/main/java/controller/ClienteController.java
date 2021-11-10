@@ -12,5 +12,6 @@ public class ClienteController {
     public void insertCliente (Cliente cliente) {clienteDAO.insertCliente(cliente);}
     public void updateCliente (Cliente cliente) {clienteDAO.updateCliente(cliente);}
     public List<Cliente> listAll () {return clienteDAO.listAll();}
-    public Optional<Cliente> getById (Long id) {return clienteDAO.getById(id);}
+    public Cliente getById (Long id) {return clienteDAO.getById(id);}
+    public Cliente getByEmail (String email) {return (Cliente) clienteDAO.getByEmail(email);}
 }

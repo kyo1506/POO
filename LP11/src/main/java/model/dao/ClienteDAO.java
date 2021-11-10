@@ -4,29 +4,47 @@ import connection.ConnectionFactory;
 import model.bean.Cliente;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
-import java.util.Optional;
 
 public class ClienteDAO {
     public List<Cliente> listAll()  {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
-            return entityManager.createNativeQuery("SELECT * FROM cliente").getResultList();
+            Query query = entityManager.createNativeQuery("SELECT * FROM cliente", Cliente.class);
+            return (List<Cliente>) query.getResultList();
         }catch (Exception ex){
-            return null;
+            ex.printStackTrace();
         }finally {
             entityManager.close();
         }
+        return null;
     }
-    public Optional<Cliente> getById(Long id) {
+    public Cliente getById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
-            return (Optional<Cliente>) entityManager.createNativeQuery("SELECT * FROM cliente WHERE id = ?").setParameter(1, id).getSingleResult();
+            Query query = entityManager.createNativeQuery("SELECT * FROM cliente WHERE id = ?", Cliente.class);
+            query.setParameter(1, id);
+            return (Cliente) query.getSingleResult();
         }catch (Exception ex){
-            return null;
+            ex.printStackTrace();
         }finally {
             entityManager.close();
         }
+        return null;
+    }
+    public Cliente getByEmail(String email) {
+        EntityManager entityManager = new ConnectionFactory().getConnection();
+        try {
+            Query query = entityManager.createNativeQuery("SELECT * FROM cliente WHERE email = ?", Cliente.class);
+            query.setParameter(1, email);
+            return (Cliente) query.getSingleResult();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }finally {
+            entityManager.close();
+        }
+        return null;
     }
     public void insertCliente (Cliente cliente) {
         EntityManager entityManager = new ConnectionFactory().getConnection();

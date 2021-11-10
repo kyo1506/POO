@@ -1,37 +1,31 @@
 package model.dao;
 
 import connection.ConnectionFactory;
-import model.bean.Historico;
+import model.bean.Pedido;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 public class PedidoDAO {
-    public List<Historico> listAll() {
+    public List<Pedido> getById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
-            return entityManager.createNativeQuery("SELECT * FROM pedido").getResultList();
+            Query query = entityManager.createNativeQuery("SELECT * FROM pedido WHERE cliente_id = ?", Pedido.class);
+            query.setParameter(1, id);
+            return (List<Pedido>) query.getResultList();
         } catch (Exception ex) {
-            return null;
+            ex.printStackTrace();
         } finally {
             entityManager.close();
         }
+        return null;
     }
-    public List<Historico> getById(Long id) {
-        EntityManager entityManager = new ConnectionFactory().getConnection();
-        try {
-            return entityManager.createNativeQuery("SELECT * FROM pedido WHERE cliente_id = ?").setParameter(1, id).getResultList();
-        } catch (Exception ex) {
-            return null;
-        } finally {
-            entityManager.close();
-        }
-    }
-    public void insertPedido(Historico historico) {
+    public void insertPedido(Pedido pedido) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(historico);
+            entityManager.persist(pedido);
             entityManager.getTransaction().commit();
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
@@ -39,11 +33,11 @@ public class PedidoDAO {
             entityManager.close();
         }
     }
-    public void updatePedido(Historico historico) {
+    public void updatePedido(Pedido pedido) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
             entityManager.getTransaction().begin();
-            entityManager.merge(historico);
+            entityManager.merge(pedido);
             entityManager.getTransaction().commit();
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();

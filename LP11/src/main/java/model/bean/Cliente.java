@@ -25,6 +25,10 @@ public class Cliente implements Serializable {
     private StatusAtivo statusAtivo;
     @Column(name = "nome", nullable = false, length = 40)
     private String nome;
+    @Column(name = "email", nullable = false, unique = true, length = 100)
+    private String email;
+    @Column(name = "senha", nullable = false, length = 100)
+    private String senha;
     @Column(name = "endereco", nullable = false, length = 25)
     private String endereco;
     @Column(name = "bairro", nullable = false, length = 20)
@@ -35,8 +39,6 @@ public class Cliente implements Serializable {
     private String cep;
     @Column(name = "uf", nullable = false, length = 2)
     private String uf;
-    @Column(name = "email", nullable = false, length = 30)
-    private String email;
     @Column(name = "telefone", length = 13)
     private String telefone;
     @Column(name = "celular", length = 14)

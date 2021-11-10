@@ -4,26 +4,45 @@ import connection.ConnectionFactory;
 import model.bean.Item;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
-import java.util.Optional;
 
 public class ItemDAO {
     public List<Item> listAll(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
-            return entityManager.createNativeQuery("SELECT * FROM item WHERE pedido_id = ?").setParameter(1, id).getResultList();
+            Query query = entityManager.createNativeQuery("SELECT * FROM item WHERE pedido_id = ?", Item.class);
+            query.setParameter(1, id);
+            return (List<Item>) query.getResultList();
         } catch (Exception ex) {
-            return null;
+            ex.printStackTrace();
         } finally {
             entityManager.close();
         }
+        return null;
     }
-    public Optional<Item> getById(Long id, EntityManager entityManager) {
+    public Item getById(Long id) {
+        EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
-            return (Optional<Item>) entityManager.createNativeQuery("SELECT * FROM item WHERE id = ?").setParameter(1, id).getSingleResult();
+            Query query = entityManager.createNativeQuery("SELECT * FROM item WHERE id = ?", Item.class);
+            query.setParameter(1, id);
+            return (Item) query.getSingleResult();
         } catch (Exception ex) {
-            return null;
+            ex.printStackTrace();
+        }finally {
+            entityManager.close();
         }
+        return null;
+    }
+    public Item getById(Long id, EntityManager entityManager) {
+        try {
+            Query query = entityManager.createNativeQuery("SELECT * FROM item WHERE id = ?", Item.class);
+            query.setParameter(1, id);
+            return (Item) query.getSingleResult();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
     public void insertItem(Item item) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
@@ -51,8 +70,8 @@ public class ItemDAO {
     }
     public void deleteById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
-        Optional<Item> item = getById(id, entityManager);
-        if (item.isPresent()) {
+        Item item = getById(id, entityManager);
+        if (item != null) {
             try {
                 entityManager.getTransaction().begin();
                 entityManager.remove(item);

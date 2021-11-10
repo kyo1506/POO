@@ -4,28 +4,22 @@ import connection.ConnectionFactory;
 import model.bean.Historico;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 public class HistoricoDAO {
-    public List<Historico> listAll() {
-        EntityManager entityManager = new ConnectionFactory().getConnection();
-        try {
-            return entityManager.createNativeQuery("SELECT * FROM historico").getResultList();
-        } catch (Exception ex) {
-            return null;
-        } finally {
-            entityManager.close();
-        }
-    }
     public List<Historico> getById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
-            return entityManager.createNativeQuery("SELECT * FROM historico WHERE produto_id = ?").setParameter(1, id).getResultList();
+            Query query = entityManager.createNativeQuery("SELECT * FROM historico WHERE produto_id = ?", Historico.class);
+            query.setParameter(1, id);
+            return (List<Historico>) query.getResultList();
         } catch (Exception ex) {
-            return null;
+            ex.printStackTrace();
         } finally {
             entityManager.close();
         }
+        return null;
     }
     public void insertHistorico(Historico historico) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
