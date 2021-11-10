@@ -21,15 +21,9 @@ public class Item implements Serializable {
     @EqualsAndHashCode
     @Embeddable
     public static class ItemId implements Serializable{
-<<<<<<< HEAD
         private Long id;
         private Long pedido_id;
         private Long produto_id;
-=======
-        private Long idItem;
-        private Long idPedido;
-        private Long idProduto;
->>>>>>> origin/main
     }
     @EmbeddedId
     private ItemId id;

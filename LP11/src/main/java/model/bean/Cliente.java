@@ -20,12 +20,9 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
-<<<<<<< HEAD
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "status", nullable = false)
     private StatusAtivo statusAtivo;
-=======
->>>>>>> origin/main
     @Column(name = "nome", nullable = false, length = 40)
     private String nome;
     @Column(name = "endereco", nullable = false, length = 25)

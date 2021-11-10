@@ -23,12 +23,9 @@ public class Produto implements Serializable {
     private Long id;
     @Column(name = "descricao", nullable = false, length = 30)
     private String descricao;
-<<<<<<< HEAD
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "status", nullable = false)
     private StatusAtivo statusAtivo;
-=======
->>>>>>> origin/main
     @Column(name = "preco", nullable = false)
     private BigDecimal preco;
     @Column(name = "qtd", nullable = false)

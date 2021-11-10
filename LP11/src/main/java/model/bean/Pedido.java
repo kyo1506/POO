@@ -22,12 +22,9 @@ public class Pedido implements Serializable {
     private Long id;
     @ManyToOne(targetEntity = Cliente.class, optional = false, fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
     private Cliente cliente;
-<<<<<<< HEAD
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "status", nullable = false)
     private StatusPedido statusPedido;
-=======
->>>>>>> origin/main
     @Column(name = "dtInclusao", nullable = false, updatable = false, insertable = false)
     @CreationTimestamp
     private Timestamp dtInclusao;
