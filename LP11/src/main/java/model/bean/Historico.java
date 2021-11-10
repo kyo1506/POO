@@ -26,9 +26,12 @@ public class Historico implements Serializable {
     private Integer qtdSolicitada;
     @Column(name = "qtdAtual", nullable = false)
     private Integer qtdAtual;
+<<<<<<< HEAD
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "status", nullable = false)
     private StatusHistorico statusHistorico;
+=======
+>>>>>>> origin/main
     @Column(name = "dtInclusao", nullable = false, updatable = false, insertable = false)
     @CreationTimestamp
     private Timestamp dtInclusao;
