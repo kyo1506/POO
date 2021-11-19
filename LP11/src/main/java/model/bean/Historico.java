@@ -32,4 +32,11 @@ public class Historico implements Serializable {
     @Column(name = "dtInclusao", nullable = false, updatable = false, insertable = false)
     @CreationTimestamp
     private Timestamp dtInclusao;
+
+    public Historico(Produto produto, Integer qtdSolicitada, Integer qtdAtual, StatusHistorico status) {
+        this.produto = produto;
+        this.qtdSolicitada = qtdSolicitada;
+        this.qtdAtual = qtdAtual;
+        this.statusHistorico = status;
+    }
 }

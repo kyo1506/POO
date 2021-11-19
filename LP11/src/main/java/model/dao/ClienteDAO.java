@@ -4,6 +4,7 @@ import connection.ConnectionFactory;
 import model.bean.Cliente;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import java.util.List;
 
@@ -13,6 +14,9 @@ public class ClienteDAO {
         try {
             Query query = entityManager.createNativeQuery("SELECT * FROM cliente", Cliente.class);
             return (List<Cliente>) query.getResultList();
+
+        }catch (NoResultException ex){
+            ex.printStackTrace();
         }catch (Exception ex){
             ex.printStackTrace();
         }finally {
@@ -26,6 +30,8 @@ public class ClienteDAO {
             Query query = entityManager.createNativeQuery("SELECT * FROM cliente WHERE id = ?", Cliente.class);
             query.setParameter(1, id);
             return (Cliente) query.getSingleResult();
+        }catch (NoResultException ex){
+            ex.printStackTrace();
         }catch (Exception ex){
             ex.printStackTrace();
         }finally {
@@ -39,6 +45,9 @@ public class ClienteDAO {
             Query query = entityManager.createNativeQuery("SELECT * FROM cliente WHERE email = ?", Cliente.class);
             query.setParameter(1, email);
             return (Cliente) query.getSingleResult();
+
+        }catch (NoResultException ex){
+            ex.printStackTrace();
         }catch (Exception ex){
             ex.printStackTrace();
         }finally {
@@ -46,26 +55,29 @@ public class ClienteDAO {
         }
         return null;
     }
-    public void insertCliente (Cliente cliente) {
+    public Boolean insertCliente (Cliente cliente) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try{
             entityManager.getTransaction().begin();
             entityManager.persist(cliente);
             entityManager.getTransaction().commit();
+            return true;
         }
         catch(Exception ex)
         {
             entityManager.getTransaction().rollback();
-        }finally {
+        } finally {
             entityManager.close();
         }
+        return false;
     }
-    public void updateCliente (Cliente cliente) {
+    public Boolean updateCliente (Cliente cliente) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try{
             entityManager.getTransaction().begin();
             entityManager.merge(cliente);
             entityManager.getTransaction().commit();
+            return true;
         }
         catch(Exception ex)
         {
@@ -73,5 +85,6 @@ public class ClienteDAO {
         }finally {
             entityManager.close();
         }
+        return false;
     }
 }

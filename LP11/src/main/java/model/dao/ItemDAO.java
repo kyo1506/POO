@@ -4,6 +4,7 @@ import connection.ConnectionFactory;
 import model.bean.Item;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import java.util.List;
 
@@ -14,7 +15,9 @@ public class ItemDAO {
             Query query = entityManager.createNativeQuery("SELECT * FROM item WHERE pedido_id = ?", Item.class);
             query.setParameter(1, id);
             return (List<Item>) query.getResultList();
-        } catch (Exception ex) {
+        }catch (NoResultException ex){
+            ex.printStackTrace();
+        }catch (Exception ex) {
             ex.printStackTrace();
         } finally {
             entityManager.close();
@@ -27,7 +30,9 @@ public class ItemDAO {
             Query query = entityManager.createNativeQuery("SELECT * FROM item WHERE id = ?", Item.class);
             query.setParameter(1, id);
             return (Item) query.getSingleResult();
-        } catch (Exception ex) {
+        }catch (NoResultException ex){
+            ex.printStackTrace();
+        }catch (Exception ex) {
             ex.printStackTrace();
         }finally {
             entityManager.close();
@@ -39,36 +44,42 @@ public class ItemDAO {
             Query query = entityManager.createNativeQuery("SELECT * FROM item WHERE id = ?", Item.class);
             query.setParameter(1, id);
             return (Item) query.getSingleResult();
-        } catch (Exception ex) {
+        }catch (NoResultException ex){
+            ex.printStackTrace();
+        }catch (Exception ex) {
             ex.printStackTrace();
         }
         return null;
     }
-    public void insertItem(Item item) {
+    public Boolean insertItem(Item item) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(item);
             entityManager.getTransaction().commit();
+            return true;
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
         } finally {
             entityManager.close();
         }
+        return false;
     }
-    public void updateItem(Item item) {
+    public Boolean updateItem(Item item) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
             entityManager.getTransaction().begin();
             entityManager.merge(item);
             entityManager.getTransaction().commit();
+            return true;
         } catch (Exception ex) {
             entityManager.getTransaction().rollback();
         } finally {
             entityManager.close();
         }
+        return false;
     }
-    public void deleteById(Long id) {
+    public Boolean deleteById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         Item item = getById(id, entityManager);
         if (item != null) {
@@ -76,11 +87,13 @@ public class ItemDAO {
                 entityManager.getTransaction().begin();
                 entityManager.remove(item);
                 entityManager.getTransaction().commit();
+                return true;
             } catch (Exception ex) {
                 entityManager.getTransaction().rollback();
             } finally {
                 entityManager.close();
             }
         }
+        return false;
     }
 }

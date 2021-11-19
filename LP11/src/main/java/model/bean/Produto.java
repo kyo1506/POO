@@ -33,4 +33,11 @@ public class Produto implements Serializable {
     @Column(name = "dtInclusao", nullable = false, updatable = false, insertable = false)
     @CreationTimestamp
     private Timestamp dtInclusao;
+
+    public Produto(String descricao, StatusAtivo status, BigDecimal preco, int qtd) {
+        this.descricao = descricao;
+        this.statusAtivo = status;
+        this.preco = preco;
+        this.qtd = qtd;
+    }
 }

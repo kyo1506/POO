@@ -21,8 +21,8 @@ public class Cliente implements Serializable {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
     @Enumerated(EnumType.ORDINAL)
-    @Column(name = "status", nullable = false)
-    private StatusAtivo statusAtivo;
+    @Column(name = "perfil", nullable = false)
+    private TipoUsuario tipoUsuario;
     @Column(name = "nome", nullable = false, length = 40)
     private String nome;
     @Column(name = "email", nullable = false, unique = true, length = 100)
