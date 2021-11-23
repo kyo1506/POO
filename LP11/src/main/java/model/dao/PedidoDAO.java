@@ -24,6 +24,21 @@ public class PedidoDAO {
         }
         return null;
     }
+    public Pedido getPedido(Long id){
+        EntityManager entityManager = new ConnectionFactory().getConnection();
+        try {
+            Query query = entityManager.createNativeQuery("SELECT * FROM pedido WHERE id = ?", Pedido.class);
+            query.setParameter(1, id);
+            return (Pedido) query.getSingleResult();
+        }catch (NoResultException ex){
+            ex.printStackTrace();
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            entityManager.close();
+        }
+        return null;
+    }
     public Boolean insertPedido(Pedido pedido) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {

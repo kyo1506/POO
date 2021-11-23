@@ -1,4 +1,4 @@
-package view;
+package view.produto;
 
 import controller.HistoricoController;
 import controller.ProdutoController;

@@ -1,4 +1,4 @@
-package view;
+package view.main;
 
 import controller.ClienteController;
 import model.bean.Cliente;

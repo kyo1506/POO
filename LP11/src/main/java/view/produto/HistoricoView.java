@@ -1,7 +1,6 @@
-package view;
+package view.produto;
 
 import controller.HistoricoController;
-import model.bean.Historico;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;

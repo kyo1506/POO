@@ -16,17 +16,16 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "item")
 public class Item implements Serializable {
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @EqualsAndHashCode
-    @Embeddable
-    public static class ItemId implements Serializable{
-        private Long id;
-        private Long pedido_id;
-        private Long produto_id;
-    }
-    @EmbeddedId
-    private ItemId id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
+    @ManyToOne(targetEntity = Pedido.class, optional = false, fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
+    private Pedido pedido;
+    @ManyToOne(targetEntity = Produto.class, optional = false, fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
+    private Produto produto;
+    @Column(name = "quantidade", nullable = false)
     private Integer quantidade;
     @Column(name = "dtInclusao", nullable = false, updatable = false, insertable = false)
     @CreationTimestamp

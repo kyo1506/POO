@@ -1,7 +1,10 @@
-package view;
+package view.main;
 
 import controller.ClienteController;
 import model.bean.Cliente;
+import view.cliente.ClienteView;
+import view.pedido.MeusPedidosView;
+import view.produto.ProdutoView;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
@@ -42,12 +45,12 @@ public class MenuView extends JFrame{
         btnSair.addActionListener(e -> {
             if (JOptionPane.showConfirmDialog(null, "Deseja sair?", "Aviso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
                 JOptionPane.showMessageDialog(null, "Obrigado por usar nosso programa!", "Information", JOptionPane.INFORMATION_MESSAGE);
-                this.dispose();
+                System.exit(0);
             }
         });
 
         btnPedidos.addActionListener(e -> {
-            PedidoView.run();
+            MeusPedidosView.run(cliente.getId());
         });
 
         this.setContentPane(mainPanel);
