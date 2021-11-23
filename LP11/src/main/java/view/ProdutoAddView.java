@@ -8,7 +8,7 @@ import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.math.BigDecimal;
 
-public class ProdutoAddView extends JFrame{
+    public class ProdutoAddView extends JDialog{
     private JPanel mainPanel;
     private JPanel topPanel;
     private JPanel bottomPanel;
@@ -23,7 +23,7 @@ public class ProdutoAddView extends JFrame{
     private JLabel lblQtd;
 
     public ProdutoAddView(String title){
-        super(title);
+        this.setTitle(title);
         try{new MaskFormatter("##.##").install(txtPreco);}catch(Exception ex){ex.printStackTrace();}
         btnLimpar.addActionListener(e -> {
             txtDescricao.setText(null);
@@ -43,14 +43,13 @@ public class ProdutoAddView extends JFrame{
             }
         });
         this.setContentPane(mainPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
         this.pack();
     }
     public static void run(){
-        JFrame frame = new ProdutoAddView("Adicionar Produto");
-        frame.setVisible(true);
+        JDialog jDialog = new ProdutoAddView("Adicionar Produto");
+        jDialog.setVisible(true);
     }
 }

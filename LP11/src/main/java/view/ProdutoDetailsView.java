@@ -14,7 +14,7 @@ import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 import java.text.ParseException;
 
-public class ProdutoDetailsView extends JFrame{
+public class ProdutoDetailsView extends JDialog{
     private JPanel mainPanel;
     private JPanel topPanel;
     private JPanel bottomPanel;
@@ -33,7 +33,7 @@ public class ProdutoDetailsView extends JFrame{
     private JButton btnHistorico;
 
     public ProdutoDetailsView(String title, Long id){
-        super(title);
+        this.setTitle(title);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -78,14 +78,13 @@ public class ProdutoDetailsView extends JFrame{
             HistoricoView.run(id);
         });
         this.setContentPane(mainPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
         this.pack();
     }
     public static void run(Long id){
-        JFrame frame = new ProdutoDetailsView("Detalhes do Produto", id);
-        frame.setVisible(true);
+        JDialog jDialog = new ProdutoDetailsView("Detalhes do Produto", id);
+        jDialog.setVisible(true);
     }
 }

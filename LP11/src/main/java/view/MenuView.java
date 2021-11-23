@@ -1,11 +1,9 @@
 package view;
 
+import controller.ClienteController;
 import model.bean.Cliente;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -18,6 +16,8 @@ public class MenuView extends JFrame{
     private JButton btnProdutos;
     private JButton btnPedidos;
     private JLabel lblEnter;
+    private ProdutoView produtoView;
+    private ClienteView ClienteView;
 
     public MenuView(String title, Cliente cliente) {
         super(title);
@@ -31,11 +31,14 @@ public class MenuView extends JFrame{
         });
 
         btnConfig.addActionListener(e -> {
-            ClienteView.run(cliente);
+            ClienteView = ClienteView.run(cliente);
+            ClienteController clienteController = new ClienteController();
+            this.dispose();
+            run(clienteController.getById(cliente.getId()));
         });
 
         btnProdutos.addActionListener(e -> {
-            ProdutoView.run();
+            produtoView = ProdutoView.run();
         });
 
         this.setContentPane(mainPanel);

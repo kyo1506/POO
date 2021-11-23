@@ -9,13 +9,13 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import java.awt.event.*;
 
-public class HistoricoView extends JFrame{
+public class HistoricoView extends JDialog{
     private JPanel mainPanel;
     private JTable tblHistorico;
     private JButton btnFechar;
 
     public HistoricoView(String title, Long id){
-        super(title);
+        this.setTitle(title);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -26,7 +26,6 @@ public class HistoricoView extends JFrame{
             this.dispose();
         });
         this.setContentPane(mainPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
@@ -85,7 +84,7 @@ public class HistoricoView extends JFrame{
         columns.getColumn(5).setCellRenderer(centerRenderer);
     }
     public static void run(Long id){
-        JFrame frame = new HistoricoView("Histórico do Produto", id);
-        frame.setVisible(true);
+        JDialog jDialog = new HistoricoView("Histórico do Produto", id);
+        jDialog.setVisible(true);
     }
 }

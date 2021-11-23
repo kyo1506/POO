@@ -4,8 +4,6 @@ import controller.ClienteController;
 import model.bean.Cliente;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.Optional;
 
 public class LoginView extends JFrame{
     private JPanel mainPanel;

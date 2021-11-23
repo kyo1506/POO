@@ -8,7 +8,7 @@ import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.awt.event.*;
 
-public class ClienteView extends JFrame{
+public class ClienteView extends JDialog{
     private JPanel mainPanel;
     private JPanel topPanel;
     private JPanel bottomPanel;
@@ -41,7 +41,7 @@ public class ClienteView extends JFrame{
     private JLabel lblCelular;
 
     public ClienteView(String title, Cliente cliente){
-        super(title);
+        this.setTitle(title);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -113,15 +113,16 @@ public class ClienteView extends JFrame{
             }
         });
         this.setContentPane(mainPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
+        this.setModal(true);
         this.pack();
     }
 
-    public static void run(Cliente cliente){
-        JFrame frame = new ClienteView("Atualizar Cliente", cliente);
-        frame.setVisible(true);
+    public static ClienteView run(Cliente cliente){
+        JDialog jDialog = new ClienteView("Atualizar Cliente", cliente);
+        jDialog.setVisible(true);
+        return (ClienteView) jDialog;
     }
 }

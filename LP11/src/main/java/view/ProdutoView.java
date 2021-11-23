@@ -8,14 +8,14 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import java.awt.event.*;
 
-public class ProdutoView extends JFrame{
+public class ProdutoView extends JDialog{
     private JPanel mainPanel;
     private JTable tblProdutos;
     private JButton btnAdicionar;
     private JButton btnFechar;
 
     public ProdutoView(String title){
-        super(title);
+        this.setTitle(title);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowOpened(WindowEvent e) {
@@ -29,16 +29,17 @@ public class ProdutoView extends JFrame{
             }
         });
         btnFechar.addActionListener(e -> {
+
             this.dispose();
         });
         btnAdicionar.addActionListener(e -> {
             ProdutoAddView.run();
         });
         this.setContentPane(mainPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
+        this.setModal(true);
         this.pack();
     }
     private void atualizarTabela(){
@@ -95,8 +96,9 @@ public class ProdutoView extends JFrame{
         columns.getColumn(4).setCellRenderer(centerRenderer);
         columns.getColumn(5).setCellRenderer(centerRenderer);
     }
-    public static void run(){
-        JFrame frame = new ProdutoView("Lista de Produtos");
-        frame.setVisible(true);
+    public static ProdutoView run(){
+        JDialog jDialog = new ProdutoView("Lista de Produtos");
+        jDialog.setVisible(true);
+        return (ProdutoView) jDialog;
     }
 }
