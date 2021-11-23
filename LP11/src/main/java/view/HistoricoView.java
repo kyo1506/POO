@@ -29,6 +29,7 @@ public class HistoricoView extends JDialog{
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
+        this.setModal(true);
         this.pack();
     }
     private void atualizarTabela(Long id){
@@ -86,5 +87,6 @@ public class HistoricoView extends JDialog{
     public static void run(Long id){
         JDialog jDialog = new HistoricoView("Histórico do Produto", id);
         jDialog.setVisible(true);
+        jDialog.toFront();
     }
 }

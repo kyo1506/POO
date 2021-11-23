@@ -120,9 +120,9 @@ public class ClienteView extends JDialog{
         this.pack();
     }
 
-    public static ClienteView run(Cliente cliente){
+    public static void run(Cliente cliente){
         JDialog jDialog = new ClienteView("Atualizar Cliente", cliente);
         jDialog.setVisible(true);
-        return (ClienteView) jDialog;
+        jDialog.toFront();
     }
 }

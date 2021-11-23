@@ -12,10 +12,12 @@ public class MeusPedidosView  extends JDialog{
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
+        this.setModal(true);
         this.pack();
     }
     public static void run(){
         JDialog jDialog = new MeusPedidosView("Meus Pedidos");
         jDialog.setVisible(true);
+        jDialog.toFront();
     }
 }

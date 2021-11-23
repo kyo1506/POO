@@ -81,10 +81,12 @@ public class ProdutoDetailsView extends JDialog{
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
+        this.setModal(true);
         this.pack();
     }
     public static void run(Long id){
         JDialog jDialog = new ProdutoDetailsView("Detalhes do Produto", id);
         jDialog.setVisible(true);
+        jDialog.toFront();
     }
 }

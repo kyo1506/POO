@@ -46,10 +46,12 @@ import java.math.BigDecimal;
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
+        this.setModal(true);
         this.pack();
     }
     public static void run(){
         JDialog jDialog = new ProdutoAddView("Adicionar Produto");
         jDialog.setVisible(true);
+        jDialog.toFront();
     }
 }

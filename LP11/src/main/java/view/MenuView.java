@@ -16,8 +16,6 @@ public class MenuView extends JFrame{
     private JButton btnProdutos;
     private JButton btnPedidos;
     private JLabel lblEnter;
-    private ProdutoView produtoView;
-    private ClienteView ClienteView;
 
     public MenuView(String title, Cliente cliente) {
         super(title);
@@ -31,14 +29,25 @@ public class MenuView extends JFrame{
         });
 
         btnConfig.addActionListener(e -> {
-            ClienteView = ClienteView.run(cliente);
+            ClienteView.run(cliente);
             ClienteController clienteController = new ClienteController();
             this.dispose();
             run(clienteController.getById(cliente.getId()));
         });
 
         btnProdutos.addActionListener(e -> {
-            produtoView = ProdutoView.run();
+            ProdutoView.run();
+        });
+
+        btnSair.addActionListener(e -> {
+            if (JOptionPane.showConfirmDialog(null, "Deseja sair?", "Aviso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
+                JOptionPane.showMessageDialog(null, "Obrigado por usar nosso programa!", "Information", JOptionPane.INFORMATION_MESSAGE);
+                this.dispose();
+            }
+        });
+
+        btnPedidos.addActionListener(e -> {
+            PedidoView.run();
         });
 
         this.setContentPane(mainPanel);
@@ -47,6 +56,7 @@ public class MenuView extends JFrame{
         this.setResizable(false);
         this.setUndecorated(false);
         this.pack();
+
     }
 
     public static void run(Cliente cliente){

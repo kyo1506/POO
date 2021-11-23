@@ -26,14 +26,17 @@ public class ProdutoView extends JDialog{
             @Override
             public void mouseClicked(MouseEvent e) {
                 ProdutoDetailsView.run((Long) tblProdutos.getValueAt(tblProdutos.getSelectedRow(), 0));
+                dispose();
+                ProdutoView.run();
             }
         });
         btnFechar.addActionListener(e -> {
-
             this.dispose();
         });
         btnAdicionar.addActionListener(e -> {
             ProdutoAddView.run();
+            this.dispose();
+            ProdutoView.run();
         });
         this.setContentPane(mainPanel);
         this.setLocationRelativeTo(null);
@@ -96,9 +99,9 @@ public class ProdutoView extends JDialog{
         columns.getColumn(4).setCellRenderer(centerRenderer);
         columns.getColumn(5).setCellRenderer(centerRenderer);
     }
-    public static ProdutoView run(){
+    public static void run(){
         JDialog jDialog = new ProdutoView("Lista de Produtos");
         jDialog.setVisible(true);
-        return (ProdutoView) jDialog;
+        jDialog.toFront();
     }
 }
