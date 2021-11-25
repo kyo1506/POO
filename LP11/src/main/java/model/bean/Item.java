@@ -27,7 +27,7 @@ public class Item implements Serializable {
     private Produto produto;
     @Column(name = "quantidade", nullable = false)
     private Integer quantidade;
-    @Column(name = "dtInclusao", nullable = false, updatable = false, insertable = false)
+    @Column(name = "dtInclusao", nullable = true, updatable = true, insertable = true)
     @CreationTimestamp
     private Timestamp dtInclusao;
 }
