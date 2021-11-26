@@ -23,6 +23,20 @@ public class ProdutoDAO {
         }
         return null;
     }
+    public List<Produto> listAllActives()  {
+        EntityManager entityManager = new ConnectionFactory().getConnection();
+        try {
+            Query query = entityManager.createNativeQuery("SELECT * FROM produto WHERE status = 1", Produto.class);
+            return (List<Produto>) query.getResultList();
+        }catch (NoResultException ex){
+            ex.printStackTrace();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }finally {
+            entityManager.close();
+        }
+        return null;
+    }
     public Produto getById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {

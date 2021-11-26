@@ -28,6 +28,8 @@ public class AddItensPedidoListView extends JDialog{
     private JButton btnAdicionarItem;
     private JButton btnConfirmarPedido;
     private JButton btnCancelar;
+    private JLabel lblQtd;
+    private JLabel lblProduto;
 
     private static int nextAddedRow = 0;
     private ProdutoController produtoController = new ProdutoController();
@@ -35,10 +37,8 @@ public class AddItensPedidoListView extends JDialog{
     private static HashMap<String, Integer> produtosAdicionados = new HashMap<>();
     private static Object[][] convertItens = new Object[10][10];
 
-    public AddItensPedidoListView(){
-
-
-        for (Produto produto: produtoController.listAll()){
+    public AddItensPedidoListView(String title){
+        for (Produto produto: produtoController.listAllActives()){
             if (produto.getQtd() > 0){
                 this.cmbListaProdutos.addItem(produto.getDescricao());
                 produtoHashMap.put(produto.getDescricao(), produto);
@@ -58,7 +58,6 @@ public class AddItensPedidoListView extends JDialog{
         });
 
         btnAdicionarItem.addActionListener(e-> {
-
             atualizarTabela(produtoHashMap.get(
                     cmbListaProdutos.getSelectedItem()),
                     nextAddedRow,
@@ -114,20 +113,19 @@ public class AddItensPedidoListView extends JDialog{
             if (isCompraOk){
                 JOptionPane.showMessageDialog(null, "Pedido confirmado! Sua encomenda está sendo preparada.");
                 limparTabela();
+                this.dispose();
             }
         } else {
             JOptionPane.showMessageDialog(null, "Seu carrinho está vazio!");
         }
-
         });
-
+        this.setTitle(title);
         this.setContentPane(mainPanel);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setUndecorated(false);
         this.setModal(true);
         this.pack();
-
     }
 
     private void atualizarTabela(Produto produto, int linha, int quantidade){
@@ -157,7 +155,7 @@ public class AddItensPedidoListView extends JDialog{
     }
 
     public static void run(){
-        JDialog jDialog = new AddItensPedidoListView();
+        JDialog jDialog = new AddItensPedidoListView("Carrinho de compras");
         jDialog.setVisible(true);
         jDialog.toFront();
     }
