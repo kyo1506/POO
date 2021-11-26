@@ -9,6 +9,26 @@ import javax.persistence.Query;
 import java.util.List;
 
 public class PedidoDAO {
+    public Pedido getLastPedidoInserted() {
+        EntityManager entityManager = new ConnectionFactory().getConnection();
+        try {
+            Query query = entityManager.createNativeQuery("SELECT * FROM pedido", Pedido.class);
+            List<Pedido> pedidos = query.getResultList();
+            if (pedidos.size() > 0){
+                return (Pedido) pedidos.get(pedidos.size() - 1);
+            } else {
+                return null;
+            }
+
+        }catch (NoResultException ex){
+            ex.printStackTrace();
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            entityManager.close();
+        }
+        return null;
+    }
     public List<Pedido> getById(Long id) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
@@ -43,7 +63,7 @@ public class PedidoDAO {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(pedido);
+            entityManager.merge(pedido);
             entityManager.getTransaction().commit();
             return true;
         } catch (Exception ex) {

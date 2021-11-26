@@ -5,7 +5,6 @@ import model.bean.Cliente;
 import model.dao.ClienteDAO;
 
 import java.util.List;
-import java.util.Optional;
 
 public class ClienteController {
     ClienteDAO clienteDAO = new ClienteDAO();

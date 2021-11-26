@@ -25,7 +25,7 @@ public class Pedido implements Serializable {
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "status", nullable = false)
     private StatusPedido statusPedido;
-    @Column(name = "dtInclusao", nullable = false, updatable = false, insertable = false)
+    @Column(name = "dtInclusao", nullable = true, updatable = true, insertable = true)
     @CreationTimestamp
     private Timestamp dtInclusao;
 }

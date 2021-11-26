@@ -6,6 +6,7 @@ import model.bean.Item;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 import java.util.List;
 
 public class ItemDAO {
@@ -51,11 +52,12 @@ public class ItemDAO {
         }
         return null;
     }
+
     public Boolean insertItem(Item item) {
         EntityManager entityManager = new ConnectionFactory().getConnection();
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(item);
+            entityManager.merge(item);
             entityManager.getTransaction().commit();
             return true;
         } catch (Exception ex) {

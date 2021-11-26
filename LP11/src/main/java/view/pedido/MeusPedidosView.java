@@ -22,7 +22,7 @@ public class MeusPedidosView  extends JDialog{
     public MeusPedidosView(String title, Long id){
         this.setTitle(title);
         btnAdicionar.addActionListener(e -> {
-
+            AddItensPedidoListView.run();
         });
         btnFechar.addActionListener(e -> {
             this.dispose();
