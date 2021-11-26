@@ -31,6 +31,8 @@ public class ProdutoDetailsView extends JDialog{
     private JLabel lblPreco;
     private JLabel lblQtd;
     private JButton btnHistorico;
+    private JRadioButton rbAdicao;
+    private JRadioButton rbRemover;
 
     public ProdutoDetailsView(String title, Long id){
         this.setTitle(title);
@@ -60,16 +62,21 @@ public class ProdutoDetailsView extends JDialog{
                 novoProduto.setStatusAtivo(StatusAtivo.Ativo);
             novoProduto.setPreco(new BigDecimal(txtPreco.getText()));
             Integer qtdAtual = novoProduto.getQtd();
-            novoProduto.setQtd(Integer.parseInt(txtQtd.getText()));
-            if (produtoController.updateProduto(novoProduto)) {
-                if (novoProduto.getQtd() > qtdAtual)
-                    historicoController.insertHistorico(new Historico(novoProduto, novoProduto.getQtd(), qtdAtual, StatusHistorico.Adição));
-                else if (novoProduto.getQtd() < qtdAtual)
-                    historicoController.insertHistorico(new Historico(novoProduto, novoProduto.getQtd(), qtdAtual, StatusHistorico.Exclusão));
-                JOptionPane.showMessageDialog(null, "Produto atualizado com sucesso!", "Information", JOptionPane.INFORMATION_MESSAGE);
+            if (rbAdicao.isSelected()) {
+                novoProduto.setQtd(Integer.parseInt(txtQtd.getText()) + qtdAtual);
+                atualizarProduto(produtoController, novoProduto);
+                historicoController.insertHistorico(new Historico(novoProduto, novoProduto.getQtd(), qtdAtual, StatusHistorico.Adição));
                 this.dispose();
-            }else
-                JOptionPane.showMessageDialog(null, "Falha ao atualizar produto!", "Error", JOptionPane.ERROR_MESSAGE);
+            }else {
+                if (qtdAtual - (Integer.parseInt(txtQtd.getText())) < 0)
+                    JOptionPane.showMessageDialog(null, "A quantidade subtraída(" + txtQtd.getText() + ") é maior do que o estoque(" + qtdAtual + ")!", "Error", JOptionPane.ERROR_MESSAGE);
+                else {
+                    novoProduto.setQtd(qtdAtual - Integer.parseInt(txtQtd.getText()));
+                    atualizarProduto(produtoController, novoProduto);
+                    historicoController.insertHistorico(new Historico(novoProduto, novoProduto.getQtd(), qtdAtual, StatusHistorico.Exclusão));
+                    this.dispose();
+                }
+            }
         });
         btnFechar.addActionListener(e -> {
             this.dispose();
@@ -84,6 +91,14 @@ public class ProdutoDetailsView extends JDialog{
         this.setModal(true);
         this.pack();
     }
+
+    private void atualizarProduto(ProdutoController produtoController, Produto produto){
+        if (produtoController.updateProduto(produto))
+            JOptionPane.showMessageDialog(null, "Produto atualizado com sucesso!", "Information", JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(null, "Falha ao atualizar produto!", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
     public static void run(Long id){
         JDialog jDialog = new ProdutoDetailsView("Detalhes do Produto", id);
         jDialog.setVisible(true);
