@@ -28,8 +28,8 @@ public class AddItensPedidoListView extends JDialog{
     private JButton btnAdicionarItem;
     private JButton btnConfirmarPedido;
     private JButton btnCancelar;
-    private JLabel lblQtd;
     private JLabel lblProduto;
+    private JLabel lblQtd;
 
     private static int nextAddedRow = 0;
     private ProdutoController produtoController = new ProdutoController();
@@ -96,11 +96,8 @@ public class AddItensPedidoListView extends JDialog{
                     );
 
                     produtoHashMap.get(key).setQtd(produtoHashMap.get(key).getQtd() - produtosAdicionados.get(key));
-
                     new ProdutoController().updateProduto(produtoHashMap.get(key));
-
                 }
-
                 else {
                     JOptionPane.showMessageDialog(null, "Produto: " + key + " não tem quantidade suficiente em estoque! \n " +
                             "Quantidade em estoque: " + produtoHashMap.get(key).getQtd());
